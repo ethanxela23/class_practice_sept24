@@ -1,0 +1,72 @@
+<!--Class Practice 9/24/25-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GPA Calculator</title>
+</head>
+<body>
+    <script>
+        // Weights
+        var test_1_weight = 0.25;
+        var test_2_weight = 0.3;
+        var project_1_weight = 0.01;
+        var project_2_weight = 0.04;
+        var project_3_weight = 0.15;
+        var assignment_weight = 0.25;
+
+        // Prompt user for inputs
+        var student_name = prompt("Student Name?");
+        var test_1_score = parseFloat(prompt("Test 1 Score (out of 100)?"));
+        var test_2_score = parseFloat(prompt("Test 2 Score (out of 100)?"));
+        var project_1_score = parseFloat(prompt("Project 1 Score (out of 100)?"));
+        var project_2_score = parseFloat(prompt("Project 2 Score (out of 100)?"));
+        var project_3_score = parseFloat(prompt("Project 3 Score (out of 100)?"));
+        var assignment_score = parseFloat(prompt("Assignment Score (out of 100)?"));
+
+        // Calculate weighted total
+        var gpa_percent = 
+            test_1_weight * test_1_score +
+            test_2_weight * test_2_score +
+            project_1_weight * project_1_score +
+            project_2_weight * project_2_score +
+            project_3_weight * project_3_score +
+            assignment_weight * assignment_score;
+
+        // Round the percentage
+        gpa_percent = Math.round(gpa_percent);
+
+        // Determine letter grade
+        var gpa = "";
+        if (gpa_percent >= 94) {
+            gpa = "A";
+        } else if (gpa_percent >= 90) {
+            gpa = "A-";
+        } else if (gpa_percent >= 87) {
+            gpa = "B+";
+        } else if (gpa_percent >= 84) {
+            gpa = "B";
+        } else if (gpa_percent >= 80) {
+            gpa = "B-";
+        } else if (gpa_percent >= 77) {
+            gpa = "C+";
+        } else if (gpa_percent >= 74) {
+            gpa = "C";
+        } else if (gpa_percent >= 70) {
+            gpa = "C-";
+        } else if (gpa_percent >= 67) {
+            gpa = "D+";
+        } else if (gpa_percent >= 64) {
+            gpa = "D";
+        } else if (gpa_percent >= 60) {
+            gpa = "D-";
+        } else {
+            gpa = "F";
+        }
+
+        // Show results
+        alert("Student: " + student_name + "\nFinal Percentage: " + gpa_percent + "%\nFinal Grade: " + gpa);
+    </script>
+</body>
+</html>
